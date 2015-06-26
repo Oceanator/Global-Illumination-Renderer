@@ -7,7 +7,7 @@
 
 struct Vec
 {
-	double x, y, z; // position, also color (r,g,b)
+    double x, y, z; // position, also color (r,g,b)
 	
     Vec(double x_=0, double y_=0, double z_=0){ x=x_; y=y_; z=z_; }
     Vec operator+(const Vec &b) const { return Vec(x+b.x,y+b.y,z+b.z); }
@@ -21,8 +21,8 @@ struct Vec
 
 struct Ray // A ray is a parametric line with an origin o and a direction d
 { 
-	Vec o, d; 
-	Ray(Vec o_, Vec d_) : o(o_), d(d_) {} 
+    Vec o, d; 
+    Ray(Vec o_, Vec d_) : o(o_), d(d_) {} 
 };
 
 enum Refl_t { DIFF, SPEC, REFR };  // material types, used in radiance()
@@ -41,7 +41,7 @@ struct Sphere
 	double intersect(const Ray &r) const 
 	{
 		// Solve t^2*d.d + 2*t*(o-p).d + (o-p).(o-p)-R^2 = 0
-	    Vec op = p-r.o; 
+        Vec op = p-r.o; 
 	    double t, eps = 1e-4;
 		double b = op.dot(r.d);
 		double det = b*b - op.dot(op) + rad * rad;
@@ -97,10 +97,10 @@ inline bool intersect(const Ray &r, double &t, int &id)
     {
     	if((d = spheres[i].intersect(r))&&d<t)
     	{
-			t = d; 
-			id = i;
-		}
-	}
+            t = d; 
+            id = i;
+        }
+    }
 	return t < inf;
 }
 
