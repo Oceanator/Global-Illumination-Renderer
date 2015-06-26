@@ -35,10 +35,10 @@ struct Sphere
 	
 	// constructor
 	Sphere(double rad_, Vec p_, Vec e_, Vec c_, Refl_t refl_):
-    	rad(rad_), p(p_), e(e_), c(c_), refl(refl_) {}
+		rad(rad_), p(p_), e(e_), c(c_), refl(refl_) {}
 	
 	// returns distance, 0 if no hit
-    double intersect(const Ray &r) const 
+	double intersect(const Ray &r) const 
 	{
 		// Solve t^2*d.d + 2*t*(o-p).d + (o-p).(o-p)-R^2 = 0
 	    Vec op = p-r.o; 
@@ -48,7 +48,7 @@ struct Sphere
 	    if (det < 0) return 0; // ray misses sphere
 		else det = sqrt(det); 
 	    return (t = b - det) > eps ? t : ((t = b + det) > eps ? t : 0); // return smaller positive t
-    }
+	}
 };
 
 // // Scene box
@@ -97,11 +97,11 @@ inline bool intersect(const Ray &r, double &t, int &id)
     {
     	if((d = spheres[i].intersect(r))&&d<t)
     	{
-      		t = d;
-      		id = i;
-    	}
-  	}
-  	return t < inf;
+			t = d; 
+			id = i;
+		}
+	}
+	return t < inf;
 }
 
 // compute the radiance estimate along ray
