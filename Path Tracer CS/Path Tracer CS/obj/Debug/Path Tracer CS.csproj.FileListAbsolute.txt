@@ -1,0 +1,6 @@
+E:\Github\Global-Illumination-Renderer\Path Tracer CS\Path Tracer CS\bin\Debug\Path Tracer CS.exe.config
+E:\Github\Global-Illumination-Renderer\Path Tracer CS\Path Tracer CS\bin\Debug\Path Tracer CS.exe
+E:\Github\Global-Illumination-Renderer\Path Tracer CS\Path Tracer CS\bin\Debug\Path Tracer CS.pdb
+E:\Github\Global-Illumination-Renderer\Path Tracer CS\Path Tracer CS\obj\Debug\Path Tracer CS.csprojResolveAssemblyReference.cache
+E:\Github\Global-Illumination-Renderer\Path Tracer CS\Path Tracer CS\obj\Debug\Path Tracer CS.exe
+E:\Github\Global-Illumination-Renderer\Path Tracer CS\Path Tracer CS\obj\Debug\Path Tracer CS.pdb

@@ -154,9 +154,9 @@ Vec radiance(const Ray &r, int depth, unsigned short *Xi){
     Vec tdir = (r.d*nnt - n*((into ? 1 : -1)*(ddn*nnt + sqrt(cos2t)))).norm();
     double a = nt-nc, b = nt+nc, R0 = a*a/(b*b), c = 1-(into ? -ddn : tdir.dot(n));
     double Re = R0+(1-R0)*c*c*c*c*c,Tr=1-Re, P = .25+.5*Re, RP = Re/P, TP = Tr/(1-P);
-        return obj.e + f.mult(depth>2 ? ((rand()/(double)RAND_MAX) < P ?   // Russian roulette
-                radiance(reflRay,depth,Xi)*RP:radiance(Ray(x,tdir),depth,Xi)*TP) :
-                radiance(reflRay,depth,Xi)*Re+radiance(Ray(x,tdir),depth,Xi)*Tr);
+    return obj.e + f.mult(depth>2 ? ((rand()/(double)RAND_MAX) < P ?   // Russian roulette
+            radiance(reflRay,depth,Xi)*RP:radiance(Ray(x,tdir),depth,Xi)*TP) :
+            radiance(reflRay,depth,Xi)*Re+radiance(Ray(x,tdir),depth,Xi)*Tr);
 }
 
 int main(int argc, char *argv[])
@@ -193,7 +193,6 @@ int main(int argc, char *argv[])
                 {        
                     for (int s=0; s<samps; s++) 
                     {
-                        
                         // r1 and r2 are random values of a tent filter
                         // Determine location of sample within pixel
                         double r1=2*(rand()/(double)RAND_MAX), dx=r1<1 ? sqrt(r1)-1: 1-sqrt(2-r1);
